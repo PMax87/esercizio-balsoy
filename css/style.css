@@ -1,0 +1,1840 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: "Campton Semibold", sans-serif;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.col-50 {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+header {
+    z-index: 100;
+    display: block;
+    position: relative;
+}
+
+.intro {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    text-align: center;
+    justify-content: center;
+}
+
+.content {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mask {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.content .mask p {
+    display: block;
+    color: #fff;
+    letter-spacing: .3em;
+    position: relative;
+    line-height: 1;
+    transform: translateY(100%);
+}
+
+.content .mask:nth-child(1) p,
+.content .mask:nth-child(3) p{
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 36px;
+}
+
+.content .mask:nth-child(2) p,
+.content .mask:nth-child(4) p{
+    font-family: "Campton Bold", serif;
+    font-size: 110px;
+    margin-left: 42px;
+}
+
+.content p:nth-child(3) {
+    margin: 0 120px;
+}
+
+.content .mask:nth-child(3) p:before,
+.content .mask:nth-child(3) p:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: #fff;
+    margin-right: 50px;
+}
+
+.content .mask:nth-child(3) p:after {
+    left: unset;
+    right: 0;
+    margin-right: 0;
+    margin-left: 50px;
+}
+
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-container {
+    display: none;
+}
+
+/* .navbar-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} */
+
+.navbar-container ul {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 12px;
+    white-space: nowrap;
+}
+
+.anchor-style {
+    display: block;
+    color: #747474;
+    font-size: 10px;
+    letter-spacing: .3em;
+    transition: color 160ms cubic-bezier(.7, 0, .3, 1) 0s;
+    position: relative;
+    z-index: 0;
+}
+
+.txt {
+    position: relative;
+    z-index: 10;
+}
+
+.hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.anchor-style:hover {
+    color: #fff;
+    transition: color 160ms cubic-bezier(.7, 0, .3, 1) 0s;
+}
+
+.anchor-style-dark {
+    display: block;
+    color: #747474;
+    font-size: 10px;
+    letter-spacing: .3em;
+    transition: color 160ms cubic-bezier(.7, 0, .3, 1) 0s;
+    position: relative;
+    z-index: 0;
+}
+
+.anchor-style-dark:hover {
+    color: #000;
+    transition: color 160ms cubic-bezier(.7, 0, .3, 1) 0s;
+}
+
+header nav .navbar-container .d-flex li svg.hover > *,
+header nav .navbar-container .try svg.hover > *,
+header nav .navbar-container .try-dark svg.hover > *,
+header nav .navbar-container .anchor-style-dark svg.hover > * {
+    fill: #967140;
+    transition: transform 160ms cubic-bezier(.7, 0, .3, 1) 0s,
+        -webkit-transform 160ms cubic-bezier(.7, 0, .3, 1) 0s;
+}
+
+header nav .navbar-container .d-flex li svg.hover > .line1,
+header nav .navbar-container .try svg.hover > .line1,
+header nav .navbar-container .try-dark svg.hover > .line1,
+header nav .navbar-container .anchor-style-dark svg.hover .line1 {
+    transform: translateY(-110%);
+}
+
+header nav .navbar-container .d-flex li svg.hover>.line2,
+header nav .navbar-container .try svg.hover > .line2,
+header nav .navbar-container .try-dark svg.hover > .line2,
+header nav .navbar-container .anchor-style-dark svg.hover .line2 {
+    transform: translateY(110%);
+}
+
+header nav .navbar-container .d-flex li svg.hover>.line3,
+header nav .navbar-container .try svg.hover > .line3,
+header nav .navbar-container .try-dark svg.hover > .line3,
+header nav .navbar-container .anchor-style-dark svg.hover .line3 {
+    transform: translateY(-110%);
+}
+
+header nav .navbar-container .d-flex .anchor-style:hover svg.hover > *,
+header nav .navbar-container .try:hover svg.hover > *,
+header nav .navbar-container .try-dark:hover svg.hover > *,
+header nav .navbar-container .anchor-style-dark:hover svg.hover > * {
+    transform: translateY(0%) !important;
+    transition: transform 160ms cubic-bezier(.7, 0, .3, 1) 0s,
+        -webkit-transform 160ms cubic-bezier(.7, 0, .3, 1) 0s;
+}
+
+.active {
+    transform: translateY(0%) !important;
+    transition: transform 160ms cubic-bezier(.7, 0, .3, 1) 0s,
+        -webkit-transform 160ms cubic-bezier(.7, 0, .3, 1) 0s;
+}
+
+.navbar-brand {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 4px;
+    top: -100%;
+    z-index: 10;
+}
+
+.navbar-container ul li {
+    margin-left: 50px;
+    position: relative;
+}
+
+.navbar-container ul li:first-child {
+    margin-left: 0;
+}
+
+.navbar-container ul li:nth-child(3) {
+    margin-left: 160px;
+}
+
+header .navbar-brand svg {
+    width: 60px;
+    height: auto;
+}
+
+header .navbar-brand svg .balsy >* {
+    fill: #fff;
+}
+
+header .navbar-brand svg .o .dot {
+    fill: #d33016;
+}
+
+header .navbar-brand svg .o > .gold,
+header .navbar-brand svg .sauce > * {
+    fill: #967140;
+}
+
+.try {
+    position: fixed;
+    right: 50px;
+    top: -100%;
+    transform: translate(0, -50%);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: .3em;
+    padding: 0 15px;
+    border-color: #fff;
+    line-height: 35px;
+}
+
+.try-dark {
+    position: fixed;
+    right: 50px;
+    top: 75px;
+    transform: translate(0, -50%);
+    color: #000;
+    font-size: 10px;
+    letter-spacing: .3em;
+    padding: 0 15px;
+    border-color: #fff;
+    line-height: 35px;
+}
+
+.try:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 2px solid #fff;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    transition: all .3s cubic-bezier(.7, 0, .3, 1) 0s;
+    -webkit-transition: all .3s cubic-bezier(.7, 0, .3, 1) 0s;
+}
+
+.try-dark:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 2px solid #000;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    transition: all .3s cubic-bezier(.7, 0, .3, 1) 0s;
+    -webkit-transition: all .3s cubic-bezier(.7, 0, .3, 1) 0s;
+}
+
+.try:hover:after {
+    bottom: -6px;
+    left: -15px;
+    right: -15px;
+    top: -6px;
+}
+
+.try-dark:hover:after {
+    bottom: -6px;
+    left: -15px;
+    right: -15px;
+    top: -6px;
+}
+
+.discover {
+    position: fixed;
+    color: #fff;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    bottom: 54px;
+    font-size: 9px;
+    letter-spacing: .3em;
+    visibility: hidden;
+}
+
+.discover .arrow {
+    fill: #967140;
+    position: absolute;
+    top: -20px;
+    transform: translate(-50%, -65%);
+    visibility: hidden;
+}
+
+.discover .discover-anchor {
+    display: block;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%,-100%);
+    padding: 20px 0;
+}
+
+.hastag {
+    position: fixed;
+    display: block;
+    bottom: -100%;
+    left: 50px;
+    font-size: 10px;
+    letter-spacing: .3em;
+    color: #747474;
+}
+
+.toscoro {
+    display: block;
+    position: fixed;
+    right: 50px;
+    bottom: -100%;
+}
+
+.toscoro img {
+    display: block;
+}
+
+#site-container {
+    position: relative;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+    position: relative;
+}
+
+.hero .map-img {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero .map-italy,
+.hero .map-japan {
+    visibility: hidden;
+}
+
+.row {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.bottle-hidden {
+    display: none;
+}
+
+.bottle-img-container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 100%);
+    max-width: 200px;
+    width: 100%;
+    z-index: 20;
+}
+
+.bottle-img-container .bottle-img {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.shadow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 160%;
+    z-index: 0;
+}
+
+#site-container .hero.panel .col-50 {
+    transform: translateY(400%);
+}
+
+.flower-left-container,
+.flower-right-container {
+    position: absolute;
+    max-width: 200px;
+    height: auto;
+    width: 100%;
+    top: 50%;
+    right: 50%;
+    z-index: 0;
+    transform: translate(0, 0%) scale(0);
+    visibility: hidden;
+}
+
+.flower-right-container {
+    left: 50%;
+    transform: translate(0, 0%) scale(0);
+    visibility: hidden;
+}
+
+.flower-left,
+.flower-right {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.ingredient-container {
+    position: relative;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+.ingredient-img {
+    width: 120px;
+    opacity: .3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.ingredient-img img {
+    width: 100%;
+    height: auto;
+}
+
+.title-container {
+    position: relative;
+    z-index: 2;
+}
+
+.japan-word {
+    color: #967140;
+}
+
+.ingredient-title {
+    margin: 5px 0 3px 0;
+}
+
+.ingredient-title h4 {
+    font-size: 17px;
+    letter-spacing: .3em;
+}
+
+.subtitle-ingredient h5 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#about,
+#about-soja {
+    height: 100vh;
+    width: 100%;
+    padding: 40px;
+}
+
+#chef .col-50:nth-child(1) {
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+#about .row,
+#about-soja .row,
+#ingredient .row {
+    position: relative;
+    overflow: hidden;
+}
+
+#chef .row {
+    position: relative;
+}
+
+#about .row.d-flex .col-50:nth-child(1),
+#about-soja .row.d-flex .col-50:nth-child(1) {
+    overflow: hidden;
+}
+
+#chef .row.d-flex .col-50:nth-child(1) .video-container {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+}
+
+#about .row.d-flex .video-container video
+#about-soja .row.d-flex .video-container video,
+#chef .row.d-flex .video-container video {
+    display: block;
+    overflow: hidden;
+    width: 101%;
+    height: auto;
+}
+
+#about .col-50:nth-child(2) .ingredient-container h4,
+#about-soja .col-50:nth-child(2) .ingredient-container h4,
+#ingredient .col-50:nth-child(1) .ingredient-container h4 {
+    font-size: 40px;
+    line-height: 1;
+}
+
+#about .col-50:nth-child(2) .subtitle-ingredient h5,
+#about-soja .col-50:nth-child(2) .ingredient-container h5 {
+    font-size: 23px;
+}
+
+#about .description-container,
+#about-soja .description-container,
+#ingredient .description-container {
+    font-family: 'Libre Baskerville', serif;
+    color: #747474;
+    font-size: 11px;
+    max-width: 260px;
+    line-height: 24px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#about-soja .row.d-flex {
+    flex-direction: row-reverse;
+}
+
+#ingredient,
+#chef {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+}
+
+#chef {
+    padding: 40px;
+}
+
+#chef .row.d-flex .col-50:nth-child(1) {
+    position: relative;
+}
+
+#chef .row.d-flex .col-50:nth-child(1) .video-container .mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0a0a0a;
+    overflow: hidden;
+}
+
+#chef .row.d-flex .col-50:nth-child(1) .mask .btn-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    text-align: center;
+}
+
+#chef .row.d-flex .col-50:nth-child(1) .mask .btn-content .icon {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#chef .row.d-flex .col-50:nth-child(1) .mask .btn-content .txt {
+    display: block;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: .3em;
+    font-size: 15px;
+}
+
+#ingredient .row.d-flex .col-50:nth-child(1) .wrapper {
+    position: relative;
+}
+
+#ingredient .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    background-image: url(../img/pattern.jpg);
+    background-size: 200px auto;
+    z-index: 0;
+}
+
+#ingredient .ingredient-img span {
+    font-family: "Playfair Display",serif;
+    font-weight: 300;
+    color: #e0d8d1;
+    font-size: 140px;
+}
+
+
+#ingredient .row.d-flex .col-50 .title-container .japan-word {
+    font-family: "Playfair Display",serif;
+    font-style: italic;
+    font-size: 20px;
+    color: #484137;
+    margin-bottom: 10px;
+}
+
+#ingredient .col-50:nth-child(1) .ingredient-container h4 {
+    color: #967140;
+    font-family: "Campton Bold";
+}
+
+#ingredient .row.d-flex .col-50:nth-child(2) .title-container,
+#chef .row.d-flex .col-50:nth-child(2) .title-container {
+    position: relative;
+    z-index: 1;
+}
+
+.col-50 .recipe {
+    padding: 40px;
+    text-align: center;
+}
+
+.col-50 .recipe .recipe-title {
+    font-family: "Playfair Display",serif;
+    font-size: 40px;
+    color: #967140;
+    line-height: 1;
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+.cols {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ingredient-list .cols .ingredient-name {
+    font-family: "Campton Semibold", sans-serif;
+    font-size: 11px;
+    letter-spacing: .3em;
+    text-align: left;
+}
+
+.ingredient-list .simple-ingredient .ingredient-name {
+    display: inline-block;
+    font-size: 11px;
+    max-width: 100%;
+}
+
+.ingredient-list ul li {
+    position: relative;
+}
+
+.ingredient-list ul li:before {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    top: 6px;
+    left: -25px;
+    width: 6px;
+    height: 6px;
+    border-radius: 10px;
+    background-color: #967140;
+}
+
+.ingredient-principal {
+    margin-bottom: 60px;
+}
+
+.ingredient-principal:nth-child(2) {
+    margin-top: 5px;
+}
+
+.separator {
+    height: 1px;
+    background: #967140;
+    margin: 0 20px;
+    min-width: 20px;
+    flex-grow: 50;
+}
+
+.ingredient-percent {
+    font-family: "Playfair Display",serif;
+    font-size: 20px;
+    color: #967140;
+    line-height: .9;
+    letter-spacing: .3em;
+    text-align: right;
+    display: inline-block;
+}
+
+.ingredient-detail {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 10px;
+    text-align: left;
+    display: block;
+    font-size: 10px;
+    margin-top: 6px;
+    color: #747474;
+}
+
+.simple-ingredient {
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-align: left;
+    letter-spacing: .15em;
+}
+
+#chef .row.d-flex .col-50:nth-child(2) {
+    padding: 0;
+}
+
+.inner {
+    padding: 40px 80px;
+    text-align: center;
+}
+
+.col-50 .inner .portrait {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.col-50 .inner .portrait img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.col-50 .chef-story {
+    margin-top: -100px;
+    margin-bottom: 40px;
+}
+
+.col-50 .inner .chef-story h3 {
+    color: #967140;
+    font-size: 14px;
+    margin-bottom: 5px;
+    letter-spacing: .3em;
+}
+
+.col-50 .inner .chef-story h2 {
+    font-size: 40px;
+    font-family: "Campton Bold";
+    letter-spacing: .3em;
+}
+
+.curriculum {
+    font-family: 'Libre Baskerville', serif;
+    max-width: 600px;
+    font-size: 11px;
+    line-height: 24px;
+    margin: 0 auto;
+    column-count: 2;
+    column-gap: 40px;
+    color: #747474;
+    word-wrap: break-word;
+}
+
+.curriculum p {
+    width: 100%;
+    text-align: left;
+}
+
+#chef .row.d-flex .col-50:nth-child(2) a {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    display: inline-block;
+    margin: 40px auto 0;
+    color: #967140;
+}
+
+.arrow {
+    margin-right: 10px;
+    fill: #967140;
+}
+
+.url {
+    font-size: 24px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 0 -10px;
+}
+
+.social li i svg > * {
+    fill: #967140;
+}
+
+.social li:nth-child(2) {
+    margin: 0 20px;
+}
+
+#useBalsoy {
+    position: relative;
+    min-height: 100vh;
+    background-color: #f9f8f4;
+    padding-top: 350px;
+    text-align: center;
+}
+
+.background {
+    height: 350px;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#useBalsoy .bottle-min,
+#tryBalsoy .bottle-min {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95px;
+    z-index: 1;
+}
+
+#useBalsoy .bottle-min img,
+#tryBalsoy .bottle-min img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.title-over-bottle {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #967140;
+    margin: 0 0 0 12px;
+}
+
+.title-over-bottle h2 {
+    font-family: "Campton Bold", sans-serif;
+    line-height: 86px;
+    font-size: 96px;
+    letter-spacing: .3em;
+}
+
+.content-use {
+    margin-top: 200px;
+    padding: 40px
+}
+
+.content-use h2 {
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    margin-bottom: 30px;
+}
+
+.content-use p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 12px;
+    line-height: 24px;
+    color: #747474;
+}
+
+#recipes,
+#tryBalsoy {
+    position: relative;
+    background-color: #f9f8f4;
+}
+
+#recipes {
+    overflow: hidden;
+}
+
+.recipes-container {
+    flex-wrap: wrap;
+}
+
+.recipes-img-container {
+    width: 25%;
+}
+
+.recipes-img-container a {
+    display: block;
+    position: relative;
+    overflow: visible;
+    z-index: 2;
+}
+
+.recipes-img {
+    max-width: 100%;
+    height: auto;
+    transform: scale(1);
+    transition: transform .4s cubic-bezier(.7,0,.3,1) 0s,-webkit-transform .4s cubic-bezier(.7,0,.3,1) 0s;
+}
+
+.btn-hover {
+    font-family: "Campton Bold", sans-serif;
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.1);
+    text-transform: uppercase;
+    background: #0a0a0a;
+    letter-spacing: .2em;
+    font-size: 12px;
+    padding: 12px 20px;
+    -webkit-transition: opacity .4s cubic-bezier(.7,0,.3,1) 0s;
+    transition: transform .4s cubic-bezier(.7,0,.3,1) 0s, opacity .4s cubic-bezier(.7,0,.3,1) 0s, 
+    -webkit-transform .4s cubic-bezier(.7,0,.3,1) 0s;
+    z-index: 1;
+    color: #fff;
+    opacity: 0;
+}
+
+.recipes-img-container a:hover .btn-hover {
+    transform: translate(-50%,-50%) scale(1);
+    opacity: 1;
+}
+
+.recipes-img-container a:hover .recipes-img {
+    transform: scale(1.1);
+}
+
+#tryBalsoy {
+    min-height: 100vh;
+    background-color: #fff;
+    padding-top: 50vh;
+    overflow: hidden;
+}
+
+#tryBalsoy .background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-top: 50vh;
+    height: 50vh;
+    width: 100%;
+    background-color: #f9f8f4;
+    z-index: 0;
+}
+
+#tryBalsoy .ingredient-img {
+    width: 300%;
+    opacity: 1;
+    z-index: -1;
+}
+
+#tryBalsoy .bottle-min {
+    z-index: 0;
+}
+
+.bottle-left,
+.bottle-right {
+    position: absolute;
+    right: 50%;
+    transform: translate(0%, -50%);
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.bottle-right {
+    right: initial;
+    left: 50%;
+}
+
+.bottle-left {
+    margin-right: calc(11.8vw + 47px);;
+}
+
+.bottle-right {
+    margin-left: calc(11.8vw + 47px);;
+}
+
+#tryBalsoy .bottle-left .bottle-min,
+#tryBalsoy .bottle-right .bottle-min {
+    position: relative;
+    top: initial;
+    left: initial;
+    display: inline-block;
+    transform: translate(0, 0);
+    width: 95px;
+    white-space: nowrap;
+}
+
+.bottle-left .bottle-min:nth-child(2),
+.bottle-right .bottle-min:nth-child(2) {
+    margin-left: 11.8vw;
+}
+
+.bottle-left .bottle-min:nth-child(3),
+.bottle-right .bottle-min:nth-child(3) {
+    margin-left: 11.8vw;
+}
+
+.form-container {
+    margin-top: 240px;
+    padding: 50px 50px 120px;
+}
+
+.form {
+    text-align: center;
+}
+
+.form-container .form h2 {
+    font-size: 24px;
+    letter-spacing: .3em;
+    margin-bottom: 30px;
+}
+
+.form-container .form p {
+    font-family: 'Libre Baskerville', serif;
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #747474;
+    line-height: 24px;
+}
+
+.form-container form {
+    max-width: 700px;
+    margin: 60px auto 0;
+    text-align: left;
+}
+
+input {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    width: 100%;
+    line-height: 70px;
+    font-size: 20px;
+    border: none;
+    color: #747474;
+    border-bottom: 1px solid #0a0a0a;
+}
+
+#input-name,
+#input-surname {
+    width: 100%;
+}
+
+.row-form {
+    display: flex;
+    align-items: center;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.col-50-form {
+    width: 50%;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.col-100-form {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.col-25-form {
+    width: 25%;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+input#country {
+    color: #000;
+}
+
+.form-container form .form-actions {
+    margin: 40px 0 20px;
+    padding: 0 20px;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+.form-container form .form-actions #btn-submit {
+    display: inline-block;
+    font-family: "Campton", sans-serif;
+    font-size: 12px;
+    padding: 20px 40px; 
+    width: auto;
+    background-color: #0a0a0a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    letter-spacing: .3em;
+}
+
+#legend {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 9px;
+    margin: 30px 0 0 0;
+    color: #c1c1c1;
+}
+
+footer {
+    position: relative;
+    background-color: #f9f8f4;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+footer .inner {
+    padding: 175px 40px 40px;
+    position: relative;
+    z-index: 0;
+    display: block;
+    text-align: center;
+}
+
+footer .inner .hastag {
+    position: static;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #967140;
+    line-height: .9;
+    letter-spacing: .3em;
+    margin-bottom: 30px;
+    z-index: 0;
+    font-size: 46px;
+}
+
+footer .inner .social {
+    margin-bottom: 120px;
+}
+
+footer .inner .social li a,
+footer .inner .brand-list li a {
+    display: block;
+}
+
+footer .inner .social li a img {
+    height: 25px;
+    width: auto;
+}
+
+footer .inner .social li {
+    margin: 0;
+    margin-left: 40px;
+}
+
+footer .inner .social li:first-child {
+    margin-left: 0;
+}
+
+.brand-list {
+    margin-bottom: 20px;
+}
+
+.brand-list li {
+    display: inline-block;
+}
+
+.brand-list li:last-child {
+    margin-left: 20px;
+}
+
+.copyright {
+    position: relative;
+    display: block;
+    font-family: "Libre Baskerville",serif;
+    font-style: italic;
+    color: #c1c1c1;
+    font-size: 10px;
+}
+
+.made_by {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+
+    .bottle-img-container {
+        max-width: 125px;
+    }
+
+    .navbar-container ul li {
+        margin-left: 30px;
+    }
+
+    .navbar-container ul li:nth-child(3) {
+        margin-left: 120px;
+    }
+
+    .anchor-style {
+        font-size: 9px;
+    }
+
+    .try {
+        font-size: 8px;
+    }
+
+    .ingredient-title h4 {
+        font-size: 14px;
+    }
+    
+    .subtitle-ingredient h5 {
+        font-size: 13px;
+    }
+
+    .ingredient-container {
+        margin-bottom: 40px;
+    }
+
+    #about .col-50:nth-child(2) .ingredient-container h4, #about-soja .col-50:nth-child(2) .ingredient-container h4, #ingredient .col-50:nth-child(1) .ingredient-container h4 {
+        font-size: 30px;
+    }
+
+    #about .col-50:nth-child(2) .subtitle-ingredient h5, #about-soja .col-50:nth-child(2) .ingredient-container h5 {
+        font-size: 18px;
+    }
+
+    #ingredient .col-50 {
+        padding: 0;
+    }
+
+    #ingredient .col-50 .wrapper {
+        padding: 40px;
+        margin-right: 60px;
+    }
+
+    #ingredient .col-50:nth-child(2) .recipe {
+        margin-left: 60px;
+    }
+
+    .col-50 .recipe .recipe-title {
+        font-size: 33px;
+        margin-bottom: 40px;
+    }
+
+    .ingredient-principal {
+        margin-bottom: 40px;
+    }
+
+    .ingredient-list .cols .ingredient-name {
+        max-width: 200px;
+    }
+
+    .ingredient-list .simple-ingredient .ingredient-name {
+        font-size: 9px;
+    }
+
+    .ingredient-list .simple-ingredient .ingredient-name {
+        max-width: 200px;
+    }
+
+    #chef {
+        min-height: 100vh;
+        height: 100%;
+    }
+
+    #chef .row {
+        flex-wrap: wrap;
+        min-height: 100vh;
+    }
+    
+    #chef .row .col-50 {
+        width: 100%;
+    }
+
+    #chef .row .col-50:nth-child(1) {
+        order: 1;
+    }
+
+    .col-50 .inner .portrait {
+        max-width: 420px;
+    }
+    
+
+    .col-50 .inner .chef-story h2 {
+        font-size: 30px;
+    }
+
+    .url {
+        font-size: 18px;
+    }
+
+    #chef .col-50:nth-child(1) {
+        height: auto;
+    }
+
+    #chef .row.d-flex .col-50:nth-child(1) .video-container {
+        padding-bottom: 56.23%;
+        margin-top: 40px;
+    }
+
+    .recipes-img-container {
+        width: 33%;
+    }
+}
+
+@media (max-width: 960px) {
+
+    .navbar-container .d-flex {
+        display: none;
+    }
+
+    .try,
+    .try-dark,
+    .hastag,
+    .toscoro {
+        display: none;
+    }
+
+    .menu-toggle,
+    .close-menu {
+        display: block;
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+    }
+
+    .hide-close-menu {
+        visibility: hidden;
+    }
+
+    .menu-toggle svg > *,
+    .close-menu svg > * {
+        fill: #967140;
+    }
+
+    .bottle-img-container {
+        display: none;
+    }
+
+    .menu-container {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #f9f8f4;
+        transform: translateY(-100%);
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    header nav .menu-container .inner-menu {
+        visibility: hidden;
+    }
+
+    header nav .menu-container .inner-menu .bottle-menu {
+        width: 35px;
+        position: relative;
+        max-width: 125px;
+        margin: 0 auto 30px;
+    }
+
+    .menu-container .inner-menu .bottle-menu img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .menu-container .inner-menu .bottle-menu .bottle-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    header nav .menu-container .inner-menu ul li a {
+        line-height: 40px;
+        font-size: 12px;
+    }
+
+    header nav .menu-container .inner-menu ul li .anchor-style:hover {
+        color: #0a0a0a;
+    }
+
+
+    .bottle-hidden {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 125px;
+    }
+
+    .bottle-hidden img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .bottle-hidden .shadow {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 160%;
+        z-index: -1;
+    }
+
+    .bottle-hidden .flower-left-container,
+    .bottle-hidden .flower-right-container {
+        z-index: -1;
+    }
+
+    #ingredient .bottle-hidden {
+        top: 790px;
+    }
+
+    .hero .col-50 .ingredient-title {
+        max-width: 130px;
+        line-height: 1;
+    }
+
+    #about,
+    #about-soja {
+        position: relative;
+    }
+
+    #about .bottle-hidden,
+    #about-soja .bottle-hidden {
+        top: 320px;
+        width: 90px;
+    }
+
+    #about,
+    #about-soja,
+    #ingredient {
+        height: 100%;
+        min-height: 100vh;
+    }
+
+    #about .row.d-flex,
+    #about-soja .row.d-flex,
+    #ingredient .row.d-flex {
+        flex-wrap: wrap;
+        min-height: 100vh;
+    }
+
+    #about .row.d-flex .col-50,
+    #about-soja .row.d-flex .col-50,
+    #ingredient .row.d-flex .col-50 {
+        width: 100%;
+    }
+
+    #about .row.d-flex .col-50:nth-child(1),
+    #about-soja .row.d-flex .col-50:nth-child(1) {
+        padding: 0;
+    }
+
+    #about .row.d-flex .col-50:nth-child(1) .video-container {
+        width: 100%;
+        height: 300px;
+        background: url(../img/poster-italy.jpg) center center no-repeat;
+        background-size: cover;
+    }
+
+    #about .row.d-flex .col-50:nth-child(1) .video-container video,
+    #about-soja .row.d-flex .col-50:nth-child(1) .video-container video {
+        display: none;
+    }
+
+    #about .col-50:nth-child(2) .wrapper .ingredient-container .ingredient-title,
+    #about-soja .col-50:nth-child(2) .wrapper .ingredient-container .ingredient-title {
+        margin: 5px auto 3px;
+    }
+
+    #about .row.d-flex .col-50:nth-child(2),
+    #about-soja .row.d-flex .col-50:nth-child(2) {
+        margin-top: 50px;
+    }
+
+    #about-soja .row.d-flex .col-50:nth-child(1) .video-container {
+        width: 100%;
+        height: 300px;
+        background: url(../img/poster-soja.jpg) center center no-repeat;
+        background-size: cover;
+    }
+
+    #ingredient .row.d-flex .col-50:nth-child(1) {
+        position: relative;
+    }
+
+    #ingredient .background {
+        width: 100%;
+        height: 100%;
+        background-position: 50% -39px;
+    }
+
+    #ingredient .row.d-flex .col-50:nth-child(1) .wrapper {
+        padding: 80px 0 330px 0;
+        margin: 0;
+    }
+
+    #ingredient .row.d-flex .col-50:nth-child(2) .recipe {
+        padding: 250px 0 80px 0;
+        margin: 0;
+    }
+
+    #ingredient .row.d-flex .col-50:nth-child(2) .recipe .recipe-title {
+        text-align: center;
+    }
+    
+    .recipes-img-container {
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 669px) {
+
+    header nav .navbar-brand {
+        top: 40px;
+    }
+
+    header nav .navbar-brand svg {
+        width: 45px;
+    }
+
+    .bottle-img-container {
+        display: none;
+    }
+
+    .bottle-hidden {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 95px;
+    }
+
+    .bottle-hidden img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .bottle-hidden .shadow {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 160%;
+        z-index: -1;
+    }
+
+    .bottle-hidden .flower-left-container,
+    .bottle-hidden .flower-right-container {
+        z-index: -1;
+    }
+
+    /* #site-container .hero .map-img,
+    #site-container .hero .map-img.map-japan {
+        display: none;
+    }
+
+    #site-container .hero .map-img.map-italy {
+        display: block;
+    } */
+
+    .hero .col-50 {
+        display: none;
+    }
+
+    #about .col-50:nth-child(2) .ingredient-container h4, #about-soja .col-50:nth-child(2) .ingredient-container h4, #ingredient .col-50:nth-child(1) .ingredient-container h4 {
+        font-size: 20px;
+    }
+
+    #about,
+    #about-soja {
+        min-height: unset;
+    }
+
+    #about .bottle-hidden,
+    #about-soja .bottle-hidden {
+        display: none;
+    }
+
+    #about .row.d-flex, #about-soja .row.d-flex, 
+    #ingredient .row.d-flex {
+        min-height: unset;
+    }
+
+    #about .row.d-flex .col-50:nth-child(2), 
+    #about-soja .row.d-flex .col-50:nth-child(2) {
+        margin-top: -45px;
+        padding: 0;
+    }
+
+    #about .row.d-flex .col-50:nth-child(2) .wrapper .ingredient-img,
+    #about-soja .row.d-flex .col-50:nth-child(2) .wrapper .ingredient-img {
+        display: none;
+    }
+
+    #about .row.d-flex .col-50:nth-child(1) .video-container,
+    #about-soja .row.d-flex .col-50:nth-child(1) .video-container {
+        height: 160px;
+    }
+
+    #ingredient .bottle-hidden {
+        top: 680px;
+    }
+
+    #ingredient .row.d-flex .col-50:nth-child(1) .wrapper {
+        padding-bottom: 240px;
+    }
+
+    #ingredient .row.d-flex .col-50:nth-child(2) .ingredient-list ul .ingredient-principal .cols {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #ingredient .row.d-flex .col-50:nth-child(2) .ingredient-list ul .ingredient-principal .cols .ingredient-name {
+        order: 1;
+        text-align: center;
+    }
+
+    #ingredient .row.d-flex .col-50:nth-child(2) .ingredient-list .ingredient-principal::before,
+    #ingredient .row.d-flex .col-50:nth-child(2) .ingredient-list .simple-ingredient:before {
+        display: none;
+    }
+
+    #ingredient .row.d-flex .col-50:nth-child(2) .ingredient-list .ingredient-principal .cols .separator {
+        display: none;
+    }
+
+    #ingredient .row.d-flex .col-50:nth-child(2) .ingredient-list .ingredient-principal .cols .ingredient-percent {
+        display: block;
+        width: 100%;
+        order: 0;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #ingredient .row.d-flex .col-50:nth-child(2) .ingredient-list .ingredient-principal .ingredient-detail {
+        text-align: center;
+    }
+
+    #ingredient .row.d-flex .col-50:nth-child(2) .ingredient-list .simple-ingredient {
+        text-align: center;
+        line-height: 1;
+    }
+
+    #chef .col-50:nth-child(2) .inner .chef-story h2 {
+        font-size: 20px;
+    }
+
+    #chef .col-50:nth-child(2) .inner {
+        padding: 40px;
+    }
+
+    #chef .col-50:nth-child(2) .inner .portrait {
+        max-width: 100%;
+    }
+
+    #chef .col-50:nth-child(2) .inner .curriculum {
+        column-count: unset;
+    }
+
+    #useBalsoy .bottle-min, #tryBalsoy .bottle-min {
+        width: 85px;
+    }
+
+    #useBalsoy .title-over-bottle h2,
+    #tryBalsoy .title-over-bottle h2 {
+        font-size: 68px;
+        line-height: 60px;
+    }
+
+    #useBalsoy .content-use h2,
+    #tryBalsoy .form-container .form h2 {
+        font-size: 16px;
+    }
+
+    .recipes-img-container {
+        width: 100%;
+    }
+
+    #tryBalsoy .form-container {
+        margin-left: -30px;
+        margin-right: -30px;
+        margin-top: 120px;
+        padding: 40px 40px 80px;
+    }
+
+    #tryBalsoy .form-container form .row-form {
+        flex-wrap: wrap;
+        padding: 0 20px
+    }
+
+    #tryBalsoy .bottle-min, 
+    #tryBalsoy .bottle-left .bottle-min,
+    #tryBalsoy .bottle-right .bottle-min {
+        width: 35px;
+    }
+
+    #tryBalsoy .form-container form .col-100-form {
+        padding: 0 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #tryBalsoy .form-container form .col-100-form,
+    #tryBalsoy .form-container form .row-form .col-50-form,
+    #tryBalsoy .form-container form .row-form .col-25-form {
+        width: 100%;
+    }
+
+    .form-container form .form-actions {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .form-container form .form-actions #btn-submit {
+        width: 100%;
+        font-size: 10px;
+    }
+
+    input {
+        line-height: 50px;
+        font-size: 16px;
+    }
+
+    footer .inner {
+        padding: 120px 40px 40px;
+    }
+
+    footer .inner .hastag {
+        font-size: 26px;
+    }
+
+    footer .inner .social li {
+        margin-left: 25px;
+    }
+
+    footer .inner .made_by {
+        display: inline-block;
+        position: static;
+        margin-top: 40px;
+    }
+
+}

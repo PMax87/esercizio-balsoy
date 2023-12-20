@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "Campton";
+    src: url(../font/CamptonMedium.woff2) format(woff2),
+    url(../font/CamptonMedium.woff) format(woff);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Campton Semibold";
+    src: url(../font/CamptonSemiBold.woff2) format(woff2),
+    url(../font/CamptonMedium.woff) format(woff);
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Campton Bold";
+    src: url(../font/CamptonBold.woff2) format(woff2),
+    url(../font/CamptonBold.woff) format(woff);
+    font-weight: bold;
+    font-style: normal;
+}
